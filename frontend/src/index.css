@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --imd-blue: #005A9C;
+    --imd-blue-dark: #003f6e;
+    --imd-blue-light: #e8f1fa;
+    --bg-primary: #F7F9FC;
+    --sidebar-width: 260px;
+    --sidebar-collapsed: 72px;
+
+    --risk-normal: #16a34a;
+    --risk-caution: #ca8a04;
+    --risk-extreme-caution: #ea580c;
+    --risk-danger: #dc2626;
+    --risk-extreme-danger: #7f1d1d;
+  }
+
+  * { box-sizing: border-box; }
+  
+  html {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: #1e293b;
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  .dark body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+  }
+}
+
+@layer utilities {
+  .sidebar-transition { transition: width 0.3s cubic-bezier(.4,0,.2,1); }
+
+  .card-glass {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.6);
+  }
+
+  .dark .card-glass {
+    background: rgba(30, 41, 59, 0.85);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .risk-normal { color: var(--risk-normal); }
+  .risk-caution { color: var(--risk-caution); }
+  .risk-extreme-caution { color: var(--risk-extreme-caution); }
+  .risk-danger { color: var(--risk-danger); }
+  .risk-extreme-danger { color: var(--risk-extreme-danger); }
+
+  .bg-risk-normal { background-color: #dcfce7; }
+  .bg-risk-caution { background-color: #fef9c3; }
+  .bg-risk-extreme-caution { background-color: #ffedd5; }
+  .bg-risk-danger { background-color: #fee2e2; }
+  .bg-risk-extreme-danger { background-color: #fef2f2; }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+  .dark ::-webkit-scrollbar-thumb { background: #334155; }
+}
+
+/* Leaflet custom overrides */
+.leaflet-container {
+  border-radius: 12px;
+  z-index: 0;
+}
+.leaflet-popup-content-wrapper {
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0,90,156,0.15) !important;
+  border: 1px solid rgba(0,90,156,0.1);
+}
+.leaflet-popup-tip { background: white !important; }
+
+/* Skeleton loading animation */
+@keyframes skeleton-shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+  background-size: 800px 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+.dark .skeleton {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background-size: 800px 100%;
+}
