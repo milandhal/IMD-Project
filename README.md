@@ -3,6 +3,13 @@
 An AI-powered web application for predicting and monitoring the **Heat Index** across Odisha using Machine Learning and real-time weather data. The system combines meteorological analysis, predictive modeling, and an interactive dashboard to provide accurate heat stress insights for researchers, government agencies, and the public.
 
 ---
+# 🎥 Project Demo
+
+### ▶️ Watch the Demo
+
+[![Watch Demo](https://img.shields.io/badge/▶️-Watch%20Demo-red?style=for-the-badge)](https://drive.google.com/file/d/137Nm_Nx6131ZyFSQxuqmigGnoGsPuE5y/view?usp=drive_link)
+
+---
 
 ## 📌 Project Overview
 
